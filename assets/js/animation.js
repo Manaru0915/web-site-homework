@@ -20,13 +20,6 @@ $(document).ready(function() {
 				if(scroll >= 8300) {
             $('#smooth3').addClass('is-animated');
         }
-    });
-        $('#scroll-btn').click(function() {
-            console.log('Scroll button clicked');
-            window.scrollBy({
-                top: window.innerHeight, // 画面の高さ分スクロール
-                left: 0,
-                behavior: 'smooth' // スムーズにスクロール
-            });
+
     });
 });
