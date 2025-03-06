@@ -157,12 +157,9 @@
     transition: .3s;
     top: 0;
     left: 100%;
-    width: 70%;
+    width: 30%;
     box-sizing: border-box;
   }
-  /* .hamburger-demo-menuwrap li{
-    font-size: 30px;
-  } */
   /* メニューリスト */
   .hamburger-demo-menulist{
     margin-right: 3%;
@@ -177,11 +174,15 @@
     display: block;
     padding: .5em 0;
     box-sizing: border-box;
+    transition: letter-spacing 0.3s;
+  }
+  .hamburger-demo-menulist li a:hover {
+    letter-spacing: 0.05em; /* 字間の設定 */
   }
   /* メニューエリア･アニメーション */
     /* 右から */
   #hamburger-demo1:checked ~ .hamburger-demo-menuwrap{
-    left: 30%;
+    left: 70%;
   }
     /* コンテンツカバー */
   #hamburger-demo1:checked ~ .hamburger-demo-cover{
