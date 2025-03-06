@@ -24,9 +24,10 @@
 .nav-menu,.nav-menu2{
   width: 38%
 }
-.nav-menu li {
+
+/* .nav-menu li {
   display: inline-block; 
-  margin-right: 30px;
+  margin-right: 60px;
   font-family: sans-serif;
   text-shadow: 0 25px 0 white;
   overflow: hidden;
@@ -39,11 +40,42 @@
 }
 .nav-menu>li>a:hover{
   transform: translate(0px,-25px);
+} */
+
+.nav-menu,.nav-menu2{
+  overflow: hidden;
 }
+.nav-menu li,.nav-menu2 li {
+  display: inline-block; 
+  margin-right: 60px;
+  font-family: sans-serif;
+  text-shadow: 0 25px 0 white;
+}
+.nav-menu>li>a,.nav-menu2>li>a{
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  transition: transform .5s ease-in-out;
+}
+.nav-menu>li>a::after,.nav-menu2>li>a::after{
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(100%);
+  white-space: nowrap;
+}
+.nav-menu>li>a:hover,.nav-menu2>li>a:hover{
+  transform: translateY(-100%);
+}
+
 
 .nav-menu2 li {
   display: inline-block; 
-  margin-right: 30px;
+  padding-right: 15px;
+  margin-right: 60px;
   /* padding-left: 45px; */
   font-family: sans-serif;
   text-shadow: 0 25px 0 black;
@@ -62,11 +94,8 @@
 
 
   /* 全体調整CSS */
-  .hamburger-demo-menubox *{
-    font-size: 16px;
-  }
-  .hamburger-demo-menubox li{
-    font-size: 14px;
+  .hamburger-demo-menubox ,.hamburger-demo-menubox1 {
+    font-size: 25px;
   }
   /* hamburgerここから */
     /* inputを非表示 */
@@ -79,7 +108,7 @@
       position: absolute;
       margin-left: 2vw;
       right: 3%;
-      top: 20px;
+      top: 10px;
       z-index: 9999;
       width: 4em;
       height: 4em;
@@ -129,18 +158,25 @@
     top: 0;
     left: 100%;
     width: 70%;
+    box-sizing: border-box;
   }
+  /* .hamburger-demo-menuwrap li{
+    font-size: 30px;
+  } */
   /* メニューリスト */
   .hamburger-demo-menulist{
     margin-right: 3%;
     padding-left: 5% !important; /* !important不要な場合もあり */
     list-style: none;
+    box-sizing: border-box;
+    text-align: left;
   }
   .hamburger-demo-menulist li a{
     text-decoration: none;
     color: white; /* メニューリストの文字色 */
     display: block;
     padding: .5em 0;
+    box-sizing: border-box;
   }
   /* メニューエリア･アニメーション */
     /* 右から */

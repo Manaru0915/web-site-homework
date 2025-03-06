@@ -1,8 +1,19 @@
 *{ margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
+@font-face {
+  font-family: 'Honoka';
+  src: url('/assets/font/Honoka_Shin_Mincho_L.otf') format('otf');
+      
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+  font-family: 'Honoka', serif;
+}
+
 body {
     overflow-x: hidden;
     min-height: 100vh;
@@ -99,15 +110,48 @@ h1{
   background-size: cover;
 }
 
-.strat-1{
+
+/* アニメーション */
+.js-fade {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(50px);
+  transition: opacity 1s,visibility 1s, transform 1s;
+}
+
+.scroll {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+
+
+.smooth {
+  clip-path: inset(0 100% 0 0);
+  display: inline-block;
+  font-size: 100px;
+  font-weight: bold;
+  transition: 1.6s cubic-bezier(0.37, 0, 0.63, 1);
+  transition-property: clip-path;
+  line-height: 1;
+  height: 100px;
+  margin-top: 15px;
+}
+.smooth.is-animated {
+  clip-path: inset(0);
+}
+
+
+
+.strat-1,.tele-1{
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 300px;
+  padding-top: 350px;
 }
 
-.strat2_img{
+.strat2_img,.tele2_img{
   width: 300px;
   
 }
@@ -121,13 +165,13 @@ h1{
   padding-top: 30%;
 }
 
+.tele_title{
+  padding-top: 0%;
+}
 
 
 
-
-
-
-.s1{
+.s1,.t1{
   height: auto;  
   display: flex;
   align-items: center;
@@ -147,7 +191,7 @@ h1{
   margin-right: 150px;
 }
 
-.stratEx1{
+.stratEx1,.teleEx1{
   width: 20%;
   font-family:  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -157,14 +201,33 @@ h1{
   flex-direction: column;
 }
 
-section h2{
-  font-size: 100px;
+.smooth{
   text-align: right;
-  margin-right: 50px;
+}
+
+.smooth >h2{
+  font-family: serif;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: rgb(0, 0, 0); 
+  text-underline-offset: 13px; 
+  text-decoration-thickness: 1.5px;
+  font-size: 100px;
+  margin-left: 595px;
   margin-bottom: 50px;
 }
+
+#smooth2>h2{
+text-align: left;
+margin-left: 50px;
+text-decoration-color: rgb(255, 255, 255); 
+text-underline-offset: 13px; 
+text-decoration-thickness: 1.5px;
+}
+
 section .p2{
   text-align: right;
+  margin-top: 80px;
   margin-right: 50px;
 }
 
@@ -175,17 +238,28 @@ section .p2{
   margin-top: 200px;
 }
 
-.strat2_img{
+.strat2_img,.tele2_img{
   margin-left: 5%;
   /* padding-left: 100px; */
 }
 
-.strat3_img{
+/* 時間があったら（画像の切り替わり） */
+
+/* .strat2_img,.tele2_img{
+  left: -100%;
+  transition: left .7s;
+}
+
+.strat2_img:hover,.tele2_img:hover{
+  left: 0;
+} */
+
+.strat3_img,.tele3_img{
   width: 200px;
   height: auto;
 }
 
-.strat4{
+.strat4,.tele4{
   width: 400px;
 }
 
@@ -198,14 +272,9 @@ section .p2{
   margin-left: 10%;
 }
 
-.catch_tele {
-  text-align: left;
-  margin-left: 50px;
-  margin-bottom: 50px;
-}
-
 .t2 p{
   margin-left: 50px;
+  margin-top: 80px;
 }
 
 .t3{

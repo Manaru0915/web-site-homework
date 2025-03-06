@@ -86,11 +86,28 @@ h1{
 }
 
 
-.f3>img,.g3>img,.i3>img{
-  width: 190px;
-  /* padding-top: 80px; */
-  padding-left: 63px;
+.f3>a,.g3>a,.i3>a{
+  width: 127px;
+  height: auto;
+  margin-left: 63px;
 }
+
+.f3>a,.g3>a,.i3>a{
+  display: block;
+  transition: all .3s ease-in-out;
+  transform: translateY(0);
+  box-shadow: 0 10px 10px rgba(0,0,0,.2);
+}
+.f3 img,.g3 img,.i3 img{
+  width: 100%;
+  vertical-align: middle;
+}
+.f3 a:hover,.g3 a:hover,.i3 a:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 14px 14px rgba(0, 0, 0, 0.6);
+}
+
+
 
 .js-fade {
   opacity: 0;
