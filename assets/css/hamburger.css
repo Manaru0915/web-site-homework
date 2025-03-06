@@ -25,32 +25,17 @@
   width: 38%
 }
 
-/* .nav-menu li {
-  display: inline-block; 
-  margin-right: 60px;
-  font-family: sans-serif;
-  text-shadow: 0 25px 0 white;
-  overflow: hidden;
-}
-.nav-menu>li>a{
-  text-decoration: none;
-  color: white;
-  transition: transform 0.7s ease ;
-  display: inline-block;
-}
-.nav-menu>li>a:hover{
-  transform: translate(0px,-25px);
-} */
-
 .nav-menu,.nav-menu2{
   overflow: hidden;
 }
+
 .nav-menu li,.nav-menu2 li {
   display: inline-block; 
   margin-right: 60px;
   font-family: sans-serif;
   text-shadow: 0 25px 0 white;
 }
+
 .nav-menu>li>a,.nav-menu2>li>a{
   color: white;
   text-decoration: none;
@@ -58,6 +43,7 @@
   position: relative;
   transition: transform .5s ease-in-out;
 }
+
 .nav-menu>li>a::after,.nav-menu2>li>a::after{
   content: attr(data-text);
   position: absolute;
@@ -107,11 +93,11 @@
       cursor: pointer;
       position: absolute;
       margin-left: 2vw;
-      right: 3%;
-      top: 10px;
+      right: 15px;
+      top: 15px;
       z-index: 9999;
-      width: 4em;
-      height: 4em;
+      width: 3em;
+      height: 3em;
     }
   /* メニュー展開時にハンバーガーアイコンを固定 */
   #hamburger-demo1:checked ~ .hamburger-demo-switch{
@@ -151,14 +137,23 @@
   .hamburger-demo-menuwrap{
     position: fixed;
     height: 100%;
-    background: black; /* メニューエリアの背景色 */
-    padding: 5em 3% 2em;
+    background: brown; /* メニューエリアの背景色 */
+    padding: 5em 5% 2em;
     z-index: 9998;
     transition: .3s;
     top: 0;
     left: 100%;
-    width: 30%;
+    width: 70%;
     box-sizing: border-box;
+  }
+  @media (max-width:768px){
+    .hamburger-demo-menuwrap{
+      height: 50%;
+      width: 70%;
+    }
+  }
+  #hamburger-demo1:checked ~ .hamburger-demo-menuwrap {
+    left: 70%; /* メニューが表示される際の位置を右端に設定 */
   }
   /* メニューリスト */
   .hamburger-demo-menulist{
@@ -181,9 +176,6 @@
   }
   /* メニューエリア･アニメーション */
     /* 右から */
-  #hamburger-demo1:checked ~ .hamburger-demo-menuwrap{
-    left: 70%;
-  }
     /* コンテンツカバー */
   #hamburger-demo1:checked ~ .hamburger-demo-cover{
     position: fixed;
@@ -192,12 +184,32 @@
     top: 0;
     left: 0;
     z-index: 9997;
-    background: rgba(109, 107, 107, 0.5);
+    background: rgba(0, 0, 0, 0.7);
     display: block;
   }
 
 @media (max-width:850px){
   .nav-menu,.nav-menu2{
-    display:none;
+    display: none;
+  }
+  
+  .hamburger-demo-menulist {
+    margin-top: 30px;
+  }
+  
+  .hamburger-demo-menulist li {
+    margin-bottom: 20px;
+  }
+  
+  .hamburger-demo-menulist li a {
+    font-size: 18px;
+    padding: 15px 0;
+  }
+  
+  .logo1 .logo2{
+    width: 120px;
+  }
+  .navbar{
+    padding-left: 0;
   }
 }
